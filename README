@@ -3,6 +3,7 @@ A Simple Parser Using NYK dynamic algoritm
 - Installation
 To Run this project, you need to have NLTK library installed on your laptop.
 You need also install the StanfordPOSTagger by downloading in this link https://nlp.stanford.edu/software/tagger.shtml#Download
+You should choose the 'Download full Stanford Tagger version 3.8.0 [129 MB]', unzip the file in the same directory of parser.py
 
 - For using the project with a sentence as standard input, run "./run_parser.sh", then will appear ">>" in the sell, with the sentence as input, you will see the output tree structure.
 
