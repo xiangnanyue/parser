@@ -1,0 +1,7 @@
+(SENT (PONCT -) (NP (NC Guerre) (PP (P d') (NP (NPP Indochine))))) (p=8.71836e-14)
+(SENT (PONCT -) (NP (NC Colloque) (PP (P sur) (NP (DET les) (NC fraudes))))) (p=6.81576e-17)
+(SENT (PONCT -) (SENT|<NP-PONCT> (NP (ADJ dernier) (NC resume)) (SENT|<PONCT-NP> (PONCT :) (SENT|<NP-PONCT> (NP (DET l') (NP|<PONCT-NC> (PONCT ") (NP|<NC-PP> (NC Affaire) (PP (P des) (NP (NC piastres)))))) (PONCT "))))) (p=3.8038e-29)
+(SENT (NP (NC Categories)) (SENT|<PONCT-NP> (PONCT :) (SENT|<NP-PONCT> (NP (NC Guerre) (PP (P d') (NP (NPP Indochine)))) (PONCT .)))) (p=1.58929e-18)
+(SENT (NP (NPP Indochine) (AP (ADJ francaise))) (PONCT .)) (p=1.40205e-10)
+(SENT (NP (ADJ Quatrieme) (NC Republique)) (PONCT .)) (p=1.53445e-11)
+(SENT (NP (NC Affaire) (AP (PREF politico-) (ADJ financiere)))) (p=5.81187e-11)

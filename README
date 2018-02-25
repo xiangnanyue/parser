@@ -1,0 +1,49 @@
+A Simple Parser Using NYK dynamic algoritm
+
+- Installation
+To Run this project, you need to have NLTK library installed on your laptop.
+You need also install the StanfordPOSTagger by downloading in this link https://nlp.stanford.edu/software/tagger.shtml#Download
+
+- For using the project with a sentence as standard input, run "./run_parser.sh", then will appear ">>" in the sell, with the sentence as input, you will see the output tree structure.
+
+- We preprocessed the sentences and remove the hyphens, the result is stored in the preprocessed_file.txt, one can directly use this file by adding parametres --remove_hyphen=True
+
+- We used a stanford french POS lexicon, downloaded in this link https://nlp.stanford.edu/software/tagger.shtml#Download, an example is given in the following:
+Try the following example to parsing a french sentence
+'''
+from nltk.tag import StanfordPOSTagger
+from nltk import word_tokenize
+
+jar = 'stanford-postagger-full-2017-06-09/stanford-postagger.jar'
+model = 'stanford-postagger-full-2017-06-09/models/french.tagger'
+
+pos_tagger = StanfordPOSTagger(model, jar, encoding='utf8')
+
+text = pos_tagger.tag(word_tokenize("Bonjour, Je suis foo"))
+print(text)
+'''
+
+- Some explanations are as follows:
+
+1. The NYK parser is relatively slow to run. We choose to run 500 lines for test, last 10% as test set.
+2. The parsing results for test set (50 lines) (in form of chomsky_normal_form) are stored in the "test_output.txt" file.
+3. We noted that some lines' parsing has failed, and that 's because we have only used 500 * 80% lines as our training data set.
+4. Since the PCFGs can be generated very quickly, we also did a training on the whole data set(99%) and leave about the last 10 sentences as test set. The result is stored in "test_ouput_trial.txt".
+
+
+- For a simple trial, run "./try_parser.sh", description is as follows:
+
+'''
+python2.7 parser.py --test=False \
+    --train_p=0.99 --valid_p=0.008 --test_p=0.002 \
+    --output_dir=./test_output_trial.txt \
+    --test_dir=./test_trial.txt \
+    --remove_hyphen=True
+'''
+Here we use only 7 lines for test and 99% sentences for training the PCFGs.
+
+- Evaluating and analysis of the result, and optimisation of the runtime will be added in the future developping works.
+To compare two parsing methods, possible methods like F1-Score. A description can be found here :
+http://courses.washington.edu/ling571/ling571_fall_2010/slides/evalb_improved_pcky.pdf
+and the nltk.metrics.scores provides a simple implementation.
+http://www.nltk.org/_modules/nltk/metrics/scores.html
